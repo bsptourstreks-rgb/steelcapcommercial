@@ -1,0 +1,289 @@
+---
+/**
+ * Facility Services Section - DARK THEME + Apple-style Gallery
+ * Enhanced with richer content and premium hover effects
+ */
+const services = [
+  {
+    title: 'Facility Management',
+    description: 'Comprehensive facility management tailored to your operations. We optimize workflows, reduce costs, and ensure your assets perform at peak efficiency around the clock.',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80'
+  },
+  {
+    title: 'Renewable Energy',
+    description: 'Sustainable energy solutions that reduce your carbon footprint and operational costs. From solar installations to energy-efficient systems, we power your future responsibly.',
+    image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=600&q=80'
+  },
+  {
+    title: 'Property Maintenance',
+    description: 'End-to-end property maintenance keeping your assets in prime condition. Our proactive approach prevents issues before they arise, extending asset lifespan and value.',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80'
+  },
+  {
+    title: 'Commercial Cleaning',
+    description: 'Immaculate professional cleaning that creates healthy, productive workspaces. Our certified teams deliver hospital-grade cleanliness for offices, retail, and commercial spaces.',
+    image: 'https://images.unsplash.com/photo-1527525443983-6e60c75fff46?w=600&q=80'
+  },
+  {
+    title: 'Landscaping',
+    description: 'Expert groundskeeping creating beautiful, welcoming outdoor spaces. From routine maintenance to complete landscape transformations, we enhance your property\'s curb appeal.',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80'
+  },
+  {
+    title: 'Technical Services',
+    description: 'Skilled trade professionals ready for any technical challenge. Plumbing, electrical, HVAC, and general maintenance — we handle it all with certified expertise.',
+    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80'
+  },
+];
+---
+
+<section id="services" class="py-16 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
+  <!-- Background decoration -->
+  <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-500/5 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-sky-600/5 rounded-full blur-3xl"></div>
+
+  <!-- Grid pattern -->
+  <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(2,132,199,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(2,132,199,0.15) 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+  <div class="container-center relative z-10">
+    <!-- Section Header -->
+    <div class="text-center max-w-2xl mx-auto mb-16 scroll-reveal">
+      <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full
+                  bg-slate-800/50 border border-slate-700/50
+                  text-sky-400 text-xs font-bold uppercase tracking-wider mb-6
+                  shadow-xl shadow-slate-900/50 backdrop-blur-xl
+                  hover:border-sky-500/30 transition-all">
+        <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+        Our Facility Services
+      </div>
+      <h2 class="font-h2-dark text-white mb-4 whitespace-nowrap">
+        Solutions for Every Site
+      </h2>
+      <p class="font-body text-slate-400">
+        Comprehensive facility services designed to drive operational excellence across your entire portfolio.
+      </p>
+    </div>
+
+    <!-- Apple-style Gallery - Tight Grid, No Gaps -->
+    <div class="gallery-grid">
+      {services.map((service, index) => (
+        <div
+          class="gallery-card scroll-reveal"
+          data-index={index}
+          style={`animation-delay: ${index * 0.08}s`}
+        >
+          <!-- Background Image -->
+          <div class="gallery-bg" style={`background-image: url('${service.image}')`}></div>
+
+          <!-- Gradient Overlay -->
+          <div class="gallery-overlay"></div>
+
+          <!-- Hover Glow Effect -->
+          <div class="gallery-glow"></div>
+
+          <!-- Border Highlight -->
+          <div class="gallery-border"></div>
+
+          <!-- Content -->
+          <div class="gallery-content">
+            <h3 class="gallery-title text-white">
+              {service.title}
+            </h3>
+            <p class="gallery-desc text-slate-300">
+              {service.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .font-h2-dark {
+    font-size: 36px;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  /* Apple-style Gallery Grid - Sharp Edges, Micro Gap */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3px;
+    border-radius: 0;
+    overflow: hidden;
+    background: #1e293b;
+  }
+
+  @media (min-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+      max-width: 1200px;
+      padding: 4px;
+    }
+  }
+
+  /* Gallery Card - Premium Apple Sharp Edge */
+  .gallery-card {
+    position: relative;
+    border-radius: 0;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.3),
+      0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .gallery-card:hover {
+    z-index: 10;
+    transform: scale(1.05) translateY(-6px);
+    box-shadow:
+      0 30px 80px rgba(0, 0, 0, 0.7),
+      0 15px 40px rgba(2, 132, 199, 0.25),
+      0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Background Image */
+  .gallery-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .gallery-card:hover .gallery-bg {
+    transform: scale(1.2);
+  }
+
+  /* Gradient Overlay - Lighter for clarity */
+  .gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.05) 0%, rgba(15, 23, 42, 0.1) 60%, rgba(15, 23, 42, 0.85) 100%);
+    transition: all 0.4s;
+  }
+
+  .gallery-card:hover .gallery-overlay {
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.05) 70%, rgba(15, 23, 42, 0.75) 100%);
+  }
+
+  /* Inner Glow Effect on Hover */
+  .gallery-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(56, 189, 248, 0.15), transparent 40%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+
+  .gallery-card:hover .gallery-glow {
+    opacity: 1;
+  }
+
+  /* Border Highlight on Hover - Sharp Edges */
+  .gallery-border {
+    position: absolute;
+    inset: 0;
+    border-radius: 0;
+    border: 2px solid transparent;
+    background: linear-gradient(180deg, rgba(56, 189, 248, 0), rgba(56, 189, 248, 0)) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    transition: all 0.3s;
+  }
+
+  .gallery-card:hover .gallery-border {
+    background: linear-gradient(180deg, rgba(56, 189, 248, 0.6), rgba(2, 132, 199, 0.3)) border-box;
+  }
+
+  /* Content */
+  .gallery-content {
+    position: absolute;
+    inset: 0;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    z-index: 10;
+  }
+
+  .gallery-title {
+    font-size: 0.95rem;
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.35rem;
+    transition: all 0.3s;
+  }
+
+  .gallery-card:hover .gallery-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #38bdf8;
+  }
+
+  .gallery-desc {
+    font-size: 0.7rem;
+    line-height: 1.4;
+    opacity: 0.7;
+    transform: translateY(5px);
+    transition: all 0.4s;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .gallery-card:hover .gallery-desc {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Staggered scroll reveal */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  // Scroll-triggered reveal animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+  // Mouse glow effect on cards
+  document.querySelectorAll('.gallery-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty('--mouse-x', `${x}%`);
+      card.style.setProperty('--mouse-y', `${y}%`);
+    });
+  });
+</script>

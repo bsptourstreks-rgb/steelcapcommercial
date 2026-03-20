@@ -1,0 +1,294 @@
+---
+/**
+ * CTA Section - LIGHT THEME Premium
+ * With magnetic buttons and enhanced visual effects
+ */
+---
+
+<section id="contact" class="py-20 bg-gradient-to-br from-white via-sky-50 to-slate-50 relative overflow-hidden">
+  <!-- Animated background decoration -->
+  <div class="absolute inset-0" id="cta-bg">
+    <!-- Floating orbs - light theme -->
+    <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-sky-200/30 blur-3xl animate-float-slow"></div>
+    <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-amber-200/20 blur-3xl animate-float-medium"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] rounded-full bg-sky-100/20 blur-3xl animate-pulse-slow"></div>
+
+    <!-- Grid pattern -->
+    <div class="absolute inset-0 opacity-30" style="background-image: linear-gradient(rgba(2,132,199,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(2,132,199,0.1) 1px, transparent 1px); background-size: 50px 50px;"></div>
+  </div>
+
+  <div class="container-narrow relative z-10">
+    <div class="text-center">
+
+      <!-- Icon with pulse ring effect -->
+      <div class="scroll-reveal inline-flex items-center justify-center w-20 h-20
+                  bg-gradient-to-br from-sky-500 to-sky-600
+                  shadow-2xl shadow-sky-500/30 mb-10 relative" style="border-radius: 0;">
+        <div class="absolute inset-0 bg-sky-400/30 animate-ping opacity-40" style="border-radius: 0;"></div>
+        <svg class="w-10 h-10 text-white relative z-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+      </div>
+
+      <!-- Heading with gradient effect -->
+      <h2 class="scroll-reveal font-display-cta mb-6 whitespace-nowrap">
+        <span class="gradient-text-cta">Ready to Transform </span>
+        Your Operations?
+      </h2>
+
+      <!-- Description -->
+      <p class="scroll-reveal font-body-cta text-slate-600 mb-12 max-w-xl mx-auto leading-relaxed">
+        Let's discuss how Steel Cap Commercial can drive efficiency,
+        safety, and growth for your business with our integrated
+        facility and IT service solutions.
+      </p>
+
+      <!-- CTA Buttons with Magnetic Effect -->
+      <div class="scroll-reveal flex flex-col sm:flex-row items-center justify-center gap-5">
+        <a href="mailto:contact@steelcapcommercial.com"
+           class="magnetic-btn btn-cta-primary group relative overflow-hidden">
+          <span class="btn-shimmer-cta"></span>
+          <span class="relative z-10 flex items-center">
+            Contact Us Today
+            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </a>
+
+        <a href="tel:+61123456789"
+           class="magnetic-btn btn-cta-secondary group">
+          <svg class="w-5 h-5 mr-2 group-hover:animate-shake text-sky-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          Call Us
+        </a>
+      </div>
+
+      <!-- Trust badges -->
+      <div class="scroll-reveal mt-14 pt-10 border-t border-slate-200">
+        <p class="font-small text-slate-500 mb-8 flex items-center justify-center gap-2">
+          <svg class="w-4 h-4 text-sky-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          Serving businesses across Australia
+        </p>
+        <div class="flex items-center justify-center gap-8 flex-wrap">
+          {[
+            { label: 'Licensed & Insured', icon: 'check' },
+            { label: 'ISO Certified', icon: 'check' },
+            { label: '24/7 Support', icon: 'clock' }
+          ].map((badge, i) => (
+            <div class="flex items-center gap-3 text-slate-600 group" key={i}>
+              <div class="w-10 h-10 bg-slate-100 border border-slate-200 flex items-center justify-center
+                            group-hover:bg-sky-50 group-hover:border-sky-200 group-hover:shadow-md
+                            transition-all duration-300" style="border-radius: 0;">
+                {badge.icon === 'check' ? (
+                  <svg class="w-5 h-5 text-sky-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6L9 17l-5-5"/>
+                  </svg>
+                ) : (
+                  <svg class="w-5 h-5 text-amber-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                )}
+              </div>
+              <span class="text-sm font-semibold group-hover:text-slate-900 transition-colors">{badge.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-30px); }
+  }
+
+  @keyframes float-medium {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.2; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.3; transform: translate(-50%, -50%) scale(1.05); }
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+  }
+
+  .animate-float-slow { animation: float-slow 10s ease-in-out infinite; }
+  .animate-float-medium { animation: float-medium 8s ease-in-out infinite; }
+  .animate-pulse-slow { animation: pulse-slow 6s ease-in-out infinite; }
+  .group:hover .animate-shake { animation: shake 0.5s ease-in-out; }
+
+  /* CTA Display Typography */
+  .font-display-cta {
+    font-size: clamp(32px, 5vw, 42px);
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #0f172a;
+  }
+
+  .font-body-cta {
+    font-size: clamp(15px, 1.2vw, 17px);
+    line-height: 1.7;
+  }
+
+  /* Gradient Text Effect for CTA */
+  .gradient-text-cta {
+    background: linear-gradient(
+      135deg,
+      #0284c7 0%,
+      #0ea5e9 25%,
+      #38bdf8 50%,
+      #0ea5e9 75%,
+      #0284c7 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift-cta 4s ease infinite;
+  }
+
+  @keyframes gradient-shift-cta {
+    0% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+    100% { background-position: 0% center; }
+  }
+
+  /* CTA Primary Button - Premium with Shimmer, Sharp Edges */
+  .btn-cta-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 16px 32px;
+    border-radius: 0;
+    border: none;
+    box-shadow:
+      0 4px 16px rgba(2, 132, 199, 0.3),
+      0 8px 32px rgba(2, 132, 199, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-cta-primary:hover {
+    background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+    box-shadow:
+      0 8px 24px rgba(2, 132, 199, 0.4),
+      0 16px 48px rgba(2, 132, 199, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+  }
+
+  /* Shimmer effect */
+  .btn-shimmer-cta {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      transparent 100%
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+  }
+
+  .btn-cta-primary:hover .btn-shimmer-cta {
+    transform: translateX(100%);
+  }
+
+  /* CTA Secondary Button - Sharp Edges */
+  .btn-cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: #334155;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 16px 32px;
+    border-radius: 0;
+    border: 2px solid #e2e8f0;
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.04),
+      0 4px 16px rgba(0, 0, 0, 0.03),
+      inset 0 1px 0 rgba(255, 255, 255, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-cta-secondary:hover {
+    background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%);
+    border-color: #0ea5e9;
+    color: #0284c7;
+    box-shadow:
+      0 4px 12px rgba(0, 0, 0, 0.06),
+      0 8px 24px rgba(2, 132, 199, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
+  }
+
+  /* Magnetic button base styles */
+  .magnetic-btn {
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Scroll reveal animations */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  // Scroll-triggered reveal animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+  // Magnetic button effect
+  document.querySelectorAll('.magnetic-btn').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = 'translate(0, 0)';
+    });
+  });
+</script>

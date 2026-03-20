@@ -1,0 +1,386 @@
+---
+/**
+ * IT Services Section - DARK Circuit Board Theme
+ * Different from Hero - Purple/Blue color scheme with unique patterns
+ */
+const itServices = [
+  {
+    title: 'Managed IT & Support',
+    description: '24/7 proactive IT services keeping your business running without interruption. Our expert team monitors, maintains, and optimizes your entire IT infrastructure.',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80'
+  },
+  {
+    title: 'Cybersecurity',
+    description: 'Enterprise-grade protection against evolving threats. We implement defense-in-depth strategies, continuous monitoring, and rapid incident response.',
+    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80'
+  },
+  {
+    title: 'Cloud & DevOps',
+    description: 'Scalable cloud infrastructure and modern DevOps practices. From migration to optimization, we build resilient systems that grow with your business.',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80'
+  },
+  {
+    title: 'Software Development',
+    description: 'Custom software solutions built for your unique challenges. Web applications, mobile apps, and integrations designed with user experience at the core.',
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80'
+  },
+  {
+    title: 'Data & AI',
+    description: 'Transform raw data into actionable insights with advanced analytics and AI. We help you make smarter decisions and uncover new opportunities.',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80'
+  },
+  {
+    title: 'Enterprise Systems',
+    description: 'Streamline operations with robust ERP and CRM solutions. We implement, customize, and integrate enterprise systems that drive efficiency.',
+    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80'
+  },
+];
+---
+
+<section id="it-services" class="py-16 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 relative overflow-hidden">
+  <!-- Dark Circuit Board Background - Different Pattern -->
+  <div class="absolute inset-0 opacity-25">
+    <svg class="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <!-- Purple/Blue gradient for traces -->
+        <linearGradient id="purpleTrace" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#7c3aed"/>
+          <stop offset="50%" style="stop-color:#a78bfa"/>
+          <stop offset="100%" style="stop-color:#6366f1"/>
+        </linearGradient>
+
+        <!-- Cyan pulse gradient -->
+        <linearGradient id="cyanPulse" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0"/>
+          <stop offset="50%" style="stop-color:#22d3ee;stop-opacity:1"/>
+          <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0"/>
+        </linearGradient>
+
+        <!-- Glow filter -->
+        <filter id="cyanGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+          <feMerge>
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+
+      <!-- Circuit Traces - Hexagonal/angled pattern -->
+      <g stroke="url(#purpleTrace)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Hexagonal inspired traces -->
+        <path d="M50 100 L100 100 L120 80 L180 80 L200 100 L260 100 L280 120 L280 180"/>
+        <path d="M350 60 L400 60 L420 40 L480 40 L500 60 L560 60 L580 80 L580 140"/>
+        <path d="M650 140 L700 140 L720 120 L780 120 L800 140 L860 140 L880 160 L880 220"/>
+        <path d="M950 80 L1000 80 L1020 60 L1080 60 L1100 80 L1160 80 L1180 100 L1180 160"/>
+        <path d="M1250 180 L1300 180 L1320 160 L1380 160 L1400 180 L1460 180 L1480 200 L1480 260"/>
+
+        <!-- Cross connections -->
+        <path d="M200 100 L220 120 L220 180 L180 220"/>
+        <path d="M580 80 L600 100 L600 160 L560 200"/>
+        <path d="M880 160 L900 180 L900 240 L860 280"/>
+        <path d="M1180 100 L1200 120 L1200 180 L1160 220"/>
+        <path d="M1480 200 L1500 220 L1500 280 L1460 320"/>
+
+        <!-- Vertical drops -->
+        <path d="M180 220 L180 280 L200 300 L260 300"/>
+        <path d="M560 200 L560 260 L580 280 L640 280"/>
+        <path d="M860 280 L860 340 L880 360 L940 360"/>
+        <path d="M1160 220 L1160 280 L1180 300 L1240 300"/>
+      </g>
+
+      <!-- Circuit Nodes -->
+      <g fill="#7c3aed" stroke="#a78bfa" stroke-width="1">
+        <circle cx="100" cy="100" r="5"/>
+        <circle cx="180" cy="80" r="4"/>
+        <circle cx="260" cy="100" r="5"/>
+        <circle cx="400" cy="60" r="5"/>
+        <circle cx="480" cy="40" r="4"/>
+        <circle cx="560" cy="60" r="5"/>
+        <circle cx="700" cy="140" r="5"/>
+        <circle cx="780" cy="120" r="4"/>
+        <circle cx="860" cy="140" r="5"/>
+        <circle cx="1000" cy="80" r="5"/>
+        <circle cx="1080" cy="60" r="4"/>
+        <circle cx="1160" cy="80" r="5"/>
+        <circle cx="1300" cy="180" r="5"/>
+        <circle cx="1380" cy="160" r="4"/>
+        <circle cx="1460" cy="180" r="5"/>
+      </g>
+
+      <!-- Animated Cyan Pulses -->
+      <g stroke="url(#cyanPulse)" stroke-width="2" fill="none" filter="url(#cyanGlow)" stroke-linecap="round">
+        <path d="M50 100 L100 100 L120 80 L200 80">
+          <animate attributeName="stroke-dasharray" values="0,400;400,0" dur="4s" repeatCount="indefinite"/>
+        </path>
+        <path d="M350 60 L400 60 L420 40 L560 40">
+          <animate attributeName="stroke-dasharray" values="0,350;350,0" dur="3s" repeatCount="indefinite"/>
+        </path>
+        <path d="M650 140 L700 140 L720 120 L860 120">
+          <animate attributeName="stroke-dasharray" values="0,400;400,0" dur="3.5s" repeatCount="indefinite"/>
+        </path>
+        <path d="M950 80 L1000 80 L1020 60 L1160 60">
+          <animate attributeName="stroke-dasharray" values="0,350;350,0" dur="4.5s" repeatCount="indefinite"/>
+        </path>
+        <path d="M1250 180 L1300 180 L1320 160 L1460 160">
+          <animate attributeName="stroke-dasharray" values="0,350;350,0" dur="3.8s" repeatCount="indefinite"/>
+        </path>
+      </g>
+
+      <!-- Pulsing Nodes -->
+      <g>
+        <circle cx="260" cy="100" r="5" fill="#22d3ee" opacity="0">
+          <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="3;8;3" dur="4s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="560" cy="60" r="5" fill="#22d3ee" opacity="0">
+          <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="3;8;3" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="860" cy="140" r="5" fill="#22d3ee" opacity="0">
+          <animate attributeName="opacity" values="0;1;0" dur="3.5s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="3;8;3" dur="3.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="1160" cy="80" r="5" fill="#22d3ee" opacity="0">
+          <animate attributeName="opacity" values="0;1;0" dur="4.5s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="3;8;3" dur="4.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="1460" cy="180" r="5" fill="#22d3ee" opacity="0">
+          <animate attributeName="opacity" values="0;1;0" dur="3.8s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="3;8;3" dur="3.8s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Subtle grid overlay -->
+  <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px); background-size: 50px 50px;"></div>
+
+  <div class="container-center relative z-10">
+    <!-- Section Header -->
+    <div class="text-center max-w-2xl mx-auto mb-16 scroll-reveal">
+      <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full
+                  bg-slate-800/50 border border-slate-700/50
+                  text-violet-400 text-xs font-bold uppercase tracking-wider mb-6
+                  shadow-xl shadow-slate-900/50 backdrop-blur-xl
+                  hover:border-violet-500/30 transition-all">
+        <span class="w-2 h-2 rounded-full bg-violet-400 animate-pulse"></span>
+        Our IT Services
+      </div>
+      <h2 class="font-h2-light text-white mb-4 whitespace-nowrap">
+        Solutions for Modern, Scalable Businesses
+      </h2>
+      <p class="font-body text-slate-400">
+        Comprehensive IT services that drive digital evolution and competitive advantage.
+      </p>
+    </div>
+
+    <!-- Apple-style Gallery -->
+    <div class="gallery-grid-light">
+      {itServices.map((service, index) => (
+        <div
+          class="gallery-card-light scroll-reveal"
+          data-index={index}
+          style={`animation-delay: ${index * 0.08}s`}
+        >
+          <div class="gallery-bg" style={`background-image: url('${service.image}')`}></div>
+          <div class="gallery-overlay-light"></div>
+          <div class="gallery-glow-light"></div>
+          <div class="gallery-border-light"></div>
+          <div class="gallery-content">
+            <h3 class="gallery-title-light text-white">
+              {service.title}
+            </h3>
+            <p class="gallery-desc-light text-slate-300">
+              {service.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .font-h2-light {
+    font-size: 36px;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .gallery-grid-light {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4px;
+    border-radius: 0;
+    overflow: hidden;
+    background: #1e1b4b;
+  }
+
+  @media (min-width: 768px) {
+    .gallery-grid-light {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+      max-width: 1200px;
+      padding: 5px;
+    }
+  }
+
+  .gallery-card-light {
+    position: relative;
+    border-radius: 0;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 1;
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.3),
+      0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .gallery-card-light:hover {
+    z-index: 10;
+    transform: scale(1.05) translateY(-6px);
+    box-shadow:
+      0 30px 80px rgba(0, 0, 0, 0.6),
+      0 15px 40px rgba(139, 92, 246, 0.25),
+      0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .gallery-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .gallery-card-light:hover .gallery-bg {
+    transform: scale(1.15);
+  }
+
+  .gallery-overlay-light {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.1) 0%, rgba(15, 23, 42, 0.15) 60%, rgba(15, 23, 42, 0.85) 100%);
+    transition: all 0.4s;
+  }
+
+  .gallery-card-light:hover .gallery-overlay-light {
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.1) 70%, rgba(15, 23, 42, 0.75) 100%);
+  }
+
+  .gallery-glow-light {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(139, 92, 246, 0.15), transparent 40%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+
+  .gallery-card-light:hover .gallery-glow-light {
+    opacity: 1;
+  }
+
+  .gallery-border-light {
+    position: absolute;
+    inset: 0;
+    border-radius: 0;
+    border: 2px solid transparent;
+    background: linear-gradient(180deg, rgba(139, 92, 246, 0), rgba(139, 92, 246, 0)) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    transition: all 0.3s;
+  }
+
+  .gallery-card-light:hover .gallery-border-light {
+    background: linear-gradient(180deg, rgba(139, 92, 246, 0.6), rgba(109, 40, 217, 0.3)) border-box;
+  }
+
+  .gallery-content {
+    position: absolute;
+    inset: 0;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    z-index: 10;
+  }
+
+  .gallery-title-light {
+    font-size: 0.95rem;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.35rem;
+    transition: all 0.3s;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .gallery-card-light:hover .gallery-title-light {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #c4b5fd;
+  }
+
+  .gallery-desc-light {
+    font-size: 0.7rem;
+    line-height: 1.4;
+    opacity: 0.95;
+    transform: translateY(5px);
+    transition: all 0.4s;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: #e2e8f0;
+    font-weight: 500;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .gallery-card-light:hover .gallery-desc-light {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+  document.querySelectorAll('.gallery-card-light').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty('--mouse-x', `${x}%`);
+      card.style.setProperty('--mouse-y', `${y}%`);
+    });
+  });
+</script>
