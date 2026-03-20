@@ -136,72 +136,53 @@
               <filter id="alienBlur" x="-50%" y="-50%" width="200%" height="200%">
                 <feGaussianBlur stdDeviation="2"/>
               </filter>
+
+              <!-- Premium Apple-style dark gradient -->
+              <linearGradient id="premiumDark" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#1c1c1e"/>
+                <stop offset="50%" style="stop-color:#2c2c2e"/>
+                <stop offset="100%" style="stop-color:#1c1c1e"/>
+              </linearGradient>
+
+              <!-- Glassmorphism overlay gradient -->
+              <linearGradient id="glassSheen" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.15"/>
+                <stop offset="50%" style="stop-color:#ffffff;stop-opacity:0.05"/>
+                <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.1"/>
+              </linearGradient>
+
+              <!-- Subtle inner glow -->
+              <radialGradient id="innerGlow" cx="30%" cy="30%" r="70%">
+                <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.08"/>
+                <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0"/>
+              </radialGradient>
+
+              <!-- Premium chip gradient -->
+              <linearGradient id="chipGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#252528"/>
+                <stop offset="30%" style="stop-color:#323236"/>
+                <stop offset="70%" style="stop-color:#2c2c2e"/>
+                <stop offset="100%" style="stop-color:#1c1c1e"/>
+              </linearGradient>
+
+              <!-- Apple-style soft shadow -->
+              <filter id="appleShadow" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.3"/>
+                <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.2"/>
+                <feDropShadow dx="0" dy="0" stdDeviation="1" flood-color="#fff" flood-opacity="0.1"/>
+              </filter>
+
+              <!-- Glass blur filter -->
+              <filter id="glassBlur">
+                <feGaussianBlur stdDeviation="1"/>
+              </filter>
             </defs>
 
             <!-- Background glow -->
             <circle cx="300" cy="300" r="200" fill="url(#alienGlow)"/>
 
-            <!-- CONNECTION LINES with flowing binary code - LARGER & MORE VISIBLE -->
-            <!-- TOP LINE to Cloud -->
-            <g>
-              <!-- Glow line behind -->
-              <path d="M300 240 L300 100" stroke="#00d4ff" stroke-width="6" fill="none" opacity="0.3"/>
-              <!-- Main line -->
-              <path id="topLine" d="M300 240 L300 100" stroke="#00d4ff" stroke-width="3" fill="none" opacity="0.9"/>
-              <g fill="#00d4ff" font-size="10" font-family="monospace" opacity="1" font-weight="bold">
-                <text>
-                  <textPath href="#topLine" startOffset="0%">
-                    <animate attributeName="startOffset" from="100%" to="0%" dur="2s" repeatCount="indefinite"/>
-                    110010101010101010101010101
-                  </textPath>
-                </text>
-              </g>
-            </g>
-
-            <!-- BOTTOM LINE to Facility -->
-            <g>
-              <path d="M300 360 L300 500" stroke="#00ff88" stroke-width="6" fill="none" opacity="0.3"/>
-              <path id="bottomLine" d="M300 360 L300 500" stroke="#00ff88" stroke-width="3" fill="none" opacity="0.9"/>
-              <g fill="#00ff88" font-size="10" font-family="monospace" opacity="1" font-weight="bold">
-                <text>
-                  <textPath href="#bottomLine" startOffset="0%">
-                    <animate attributeName="startOffset" from="0%" to="100%" dur="2s" repeatCount="indefinite"/>
-                    001100110011001100110011001
-                  </textPath>
-                </text>
-              </g>
-            </g>
-
-            <!-- LEFT LINE to IT -->
-            <g>
-              <path d="M240 300 L100 300" stroke="#ffd700" stroke-width="6" fill="none" opacity="0.3"/>
-              <path id="leftLine" d="M240 300 L100 300" stroke="#ffd700" stroke-width="3" fill="none" opacity="0.9"/>
-              <g fill="#ffd700" font-size="10" font-family="monospace" opacity="1" font-weight="bold">
-                <text>
-                  <textPath href="#leftLine" startOffset="0%">
-                    <animate attributeName="startOffset" from="100%" to="0%" dur="2s" repeatCount="indefinite"/>
-                    101010101010101010101010101
-                  </textPath>
-                </text>
-              </g>
-            </g>
-
-            <!-- RIGHT LINE to Industry -->
-            <g>
-              <path d="M360 300 L500 300" stroke="#ff6b9d" stroke-width="6" fill="none" opacity="0.3"/>
-              <path id="rightLine" d="M360 300 L500 300" stroke="#ff6b9d" stroke-width="3" fill="none" opacity="0.9"/>
-              <g fill="#ff6b9d" font-size="10" font-family="monospace" opacity="1" font-weight="bold">
-                <text>
-                  <textPath href="#rightLine" startOffset="0%">
-                    <animate attributeName="startOffset" from="0%" to="100%" dur="2s" repeatCount="indefinite"/>
-                    010101010101010101010101010
-                  </textPath>
-                </text>
-              </g>
-            </g>
-
-            <!-- MAIN SCC CHIP - Alien Tech Style -->
-            <g transform="translate(300, 300)">
+            <!-- MAIN SCC CHIP - Premium Apple-Style Dark -->
+            <g transform="translate(300, 300)" filter="url(#appleShadow)">
               <!-- Outer rotating ring -->
               <circle r="75" fill="none" stroke="#0ea5e9" stroke-width="1" stroke-dasharray="10 5" opacity="0.5">
                 <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="20s" repeatCount="indefinite"/>
@@ -212,13 +193,19 @@
                 <animateTransform attributeName="transform" type="rotate" from="360 0 0" to="0 0 0" dur="15s" repeatCount="indefinite"/>
               </circle>
 
-              <!-- Main chip body -->
-              <rect x="-55" y="-55" width="110" height="110" fill="#0f172a" stroke="#0ea5e9" stroke-width="2">
-                <animate attributeName="stroke-width" values="2;3;2" dur="2s" repeatCount="indefinite"/>
+              <!-- Main chip body with premium gradient -->
+              <rect x="-55" y="-55" width="110" height="110" fill="url(#chipGradient)" stroke="#3a3a3c" stroke-width="1.5">
+                <animate attributeName="stroke-width" values="1.5;2.5;1.5" dur="2s" repeatCount="indefinite"/>
               </rect>
 
+              <!-- Inner glow overlay -->
+              <rect x="-55" y="-55" width="110" height="110" fill="url(#innerGlow)"/>
+
+              <!-- Glass sheen overlay -->
+              <rect x="-55" y="-55" width="110" height="110" fill="url(#glassSheen)"/>
+
               <!-- Inner circuit pattern -->
-              <g stroke="#0ea5e9" stroke-width="1" fill="none" opacity="0.3">
+              <g stroke="#0ea5e9" stroke-width="1" fill="none" opacity="0.4">
                 <rect x="-40" y="-40" width="80" height="80" stroke-dasharray="3 2"/>
                 <rect x="-30" y="-30" width="60" height="60" stroke-dasharray="2 2"/>
                 <rect x="-20" y="-20" width="40" height="40" stroke-dasharray="2 1"/>
@@ -226,7 +213,7 @@
 
               <!-- SCC Text -->
               <text x="0" y="5" text-anchor="middle" fill="#22d3ee" font-size="16" font-weight="bold" font-family="monospace">SCC</text>
-              <text x="0" y="20" text-anchor="middle" fill="#0ea5e9" font-size="6" font-family="monospace" opacity="0.7">CORE HUB</text>
+              <text x="0" y="20" text-anchor="middle" fill="#0ea5e9" font-size="6" font-family="monospace" opacity="0.8">CORE HUB</text>
 
               <!-- Pulsing core -->
               <circle r="8" fill="#0ea5e9">
@@ -235,69 +222,104 @@
               </circle>
             </g>
 
-            <!-- MODULE 1: TOP - Cloud Service - Electric Blue -->
-            <g transform="translate(300, 70)" class="hover-module">
-              <circle r="40" fill="#0f172a" stroke="#00d4ff" stroke-width="2.5">
-                <animate attributeName="r" values="40;44;40" dur="2s" repeatCount="indefinite"/>
-                <animate attributeName="stroke-width" values="2.5;3.5;2.5" dur="2s" repeatCount="indefinite"/>
-              </circle>
-              <circle r="35" fill="none" stroke="#00d4ff" stroke-width="1" stroke-dasharray="4 2" opacity="0.6">
-                <animateTransform attributeName="transform" type="rotate" from="0 300 70" to="360 300 70" dur="10s" repeatCount="indefinite"/>
-              </circle>
-              <!-- Premium glow effect -->
-              <circle r="40" fill="none" stroke="#00d4ff" stroke-width="4" opacity="0.3">
-                <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite"/>
-              </circle>
-              <text x="0" y="2" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">CLOUD</text>
-              <text x="0" y="14" text-anchor="middle" fill="#00d4ff" font-size="6" font-family="monospace">INFRASTRUCTURE</text>
-            </g>
+            <!-- ORBITING MODULES GROUP - Circular Animation around SCC chip -->
+            <!-- Outer group: Position at center -->
+            <g transform="translate(300, 300)">
+              <!-- Inner group: Handle rotation -->
+              <g>
+                <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="30s" repeatCount="indefinite"/>
 
-            <!-- MODULE 2: BOTTOM - Facility Service - Emerald Green -->
-            <g transform="translate(300, 530)" class="hover-module">
-              <circle r="40" fill="#0f172a" stroke="#00ff88" stroke-width="2.5">
-                <animate attributeName="r" values="40;44;40" dur="2s" repeatCount="indefinite" begin="0.5s"/>
-                <animate attributeName="stroke-width" values="2.5;3.5;2.5" dur="2s" repeatCount="indefinite" begin="0.5s"/>
-              </circle>
-              <circle r="35" fill="none" stroke="#00ff88" stroke-width="1" stroke-dasharray="4 2" opacity="0.6">
-                <animateTransform attributeName="transform" type="rotate" from="360 300 530" to="0 300 530" dur="10s" repeatCount="indefinite"/>
-              </circle>
-              <circle r="40" fill="none" stroke="#00ff88" stroke-width="4" opacity="0.3">
-                <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite" begin="0.5s"/>
-              </circle>
-              <text x="0" y="2" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">FACILITY</text>
-              <text x="0" y="14" text-anchor="middle" fill="#00ff88" font-size="6" font-family="monospace">MANAGEMENT</text>
-            </g>
+              <!-- MODULE 1: TOP - Cloud Service - Electric Blue -->
+              <!-- Position: 230px from center (radius of orbit) -->
+              <g transform="translate(0, -230)" class="hover-module" filter="url(#appleShadow)">
+                <!-- Counter-rotate to keep text upright -->
+                <g>
+                  <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-360 0 0" dur="30s" repeatCount="indefinite"/>
+                  <circle r="40" fill="url(#premiumDark)" stroke="#00d4ff" stroke-width="2.5">
+                    <animate attributeName="r" values="40;44;40" dur="2s" repeatCount="indefinite"/>
+                    <animate attributeName="stroke-width" values="2.5;3.5;2.5" dur="2s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle r="35" fill="none" stroke="#00d4ff" stroke-width="1" stroke-dasharray="4 2" opacity="0.6">
+                    <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="10s" repeatCount="indefinite"/>
+                  </circle>
+                  <!-- Inner glow -->
+                  <circle r="40" fill="url(#innerGlow)"/>
+                  <!-- Glass sheen -->
+                  <circle r="40" fill="url(#glassSheen)"/>
+                  <!-- Premium glow effect -->
+                  <circle r="40" fill="none" stroke="#00d4ff" stroke-width="4" opacity="0.3">
+                    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite"/>
+                  </circle>
+                  <text x="0" y="2" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">CLOUD</text>
+                  <text x="0" y="14" text-anchor="middle" fill="#00d4ff" font-size="6" font-family="monospace">INFRASTRUCTURE</text>
+                </g>
+              </g>
 
-            <!-- MODULE 3: LEFT - IT Service - Gold/Amber -->
-            <g transform="translate(70, 300)" class="hover-module">
-              <circle r="40" fill="#0f172a" stroke="#ffd700" stroke-width="2.5">
-                <animate attributeName="r" values="40;44;40" dur="2s" repeatCount="indefinite" begin="0.3s"/>
-                <animate attributeName="stroke-width" values="2.5;3.5;2.5" dur="2s" repeatCount="indefinite" begin="0.3s"/>
-              </circle>
-              <circle r="35" fill="none" stroke="#ffd700" stroke-width="1" stroke-dasharray="4 2" opacity="0.6">
-                <animateTransform attributeName="transform" type="rotate" from="0 70 300" to="360 70 300" dur="10s" repeatCount="indefinite"/>
-              </circle>
-              <circle r="40" fill="none" stroke="#ffd700" stroke-width="4" opacity="0.3">
-                <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite" begin="0.3s"/>
-              </circle>
-              <text x="0" y="2" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">IT</text>
-              <text x="0" y="14" text-anchor="middle" fill="#ffd700" font-size="6" font-family="monospace">SOLUTIONS</text>
-            </g>
+              <!-- MODULE 2: RIGHT - Facility Service - Emerald Green -->
+              <g transform="translate(230, 0)" class="hover-module" filter="url(#appleShadow)">
+                <g>
+                  <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-360 0 0" dur="30s" repeatCount="indefinite"/>
+                  <circle r="40" fill="url(#premiumDark)" stroke="#00ff88" stroke-width="2.5">
+                    <animate attributeName="r" values="40;44;40" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+                    <animate attributeName="stroke-width" values="2.5;3.5;2.5" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+                  </circle>
+                  <circle r="35" fill="none" stroke="#00ff88" stroke-width="1" stroke-dasharray="4 2" opacity="0.6">
+                    <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="10s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle r="40" fill="url(#innerGlow)"/>
+                  <circle r="40" fill="url(#glassSheen)"/>
+                  <circle r="40" fill="none" stroke="#00ff88" stroke-width="4" opacity="0.3">
+                    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+                  </circle>
+                  <text x="0" y="2" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">FACILITY</text>
+                  <text x="0" y="14" text-anchor="middle" fill="#00ff88" font-size="6" font-family="monospace">MANAGEMENT</text>
+                </g>
+              </g>
 
-            <!-- MODULE 4: RIGHT - Industry Service - Rose Pink -->
-            <g transform="translate(530, 300)" class="hover-module">
-              <circle r="40" fill="#0f172a" stroke="#ff6b9d" stroke-width="2.5">
-                <animate attributeName="r" values="40;44;40" dur="2s" repeatCount="indefinite" begin="0.7s"/>
-                <animate attributeName="stroke-width" values="2.5;3.5;2.5" dur="2s" repeatCount="indefinite" begin="0.7s"/>
-              </circle>
-              <circle r="35" fill="none" stroke="#ff6b9d" stroke-width="1" stroke-dasharray="4 2" opacity="0.6">
-                <animateTransform attributeName="transform" type="rotate" from="360 530 300" to="0 530 300" dur="10s" repeatCount="indefinite"/>
-              </circle>
-              <circle r="40" fill="none" stroke="#ff6b9d" stroke-width="4" opacity="0.3">
-                <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite" begin="0.7s"/>
-              </circle>
-              <text x="0" y="2" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">INDUSTRY</text>
-              <text x="0" y="14" text-anchor="middle" fill="#ff6b9d" font-size="6" font-family="monospace">EXPERTISE</text>
+              <!-- MODULE 3: BOTTOM - IT Service - Gold/Amber -->
+              <g transform="translate(0, 230)" class="hover-module" filter="url(#appleShadow)">
+                <g>
+                  <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-360 0 0" dur="30s" repeatCount="indefinite"/>
+                  <circle r="40" fill="url(#premiumDark)" stroke="#ffd700" stroke-width="2.5">
+                    <animate attributeName="r" values="40;44;40" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+                    <animate attributeName="stroke-width" values="2.5;3.5;2.5" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+                  </circle>
+                  <circle r="35" fill="none" stroke="#ffd700" stroke-width="1" stroke-dasharray="4 2" opacity="0.6">
+                    <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="10s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle r="40" fill="url(#innerGlow)"/>
+                  <circle r="40" fill="url(#glassSheen)"/>
+                  <circle r="40" fill="none" stroke="#ffd700" stroke-width="4" opacity="0.3">
+                    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+                  </circle>
+                  <text x="0" y="2" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">IT</text>
+                  <text x="0" y="14" text-anchor="middle" fill="#ffd700" font-size="6" font-family="monospace">SOLUTIONS</text>
+                </g>
+              </g>
+
+              <!-- MODULE 4: LEFT - Industry Service - Rose Pink -->
+              <g transform="translate(-230, 0)" class="hover-module" filter="url(#appleShadow)">
+                <g>
+                  <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="-360 0 0" dur="30s" repeatCount="indefinite"/>
+                  <circle r="40" fill="url(#premiumDark)" stroke="#ff6b9d" stroke-width="2.5">
+                    <animate attributeName="r" values="40;44;40" dur="2s" repeatCount="indefinite" begin="0.7s"/>
+                    <animate attributeName="stroke-width" values="2.5;3.5;2.5" dur="2s" repeatCount="indefinite" begin="0.7s"/>
+                  </circle>
+                  <circle r="35" fill="none" stroke="#ff6b9d" stroke-width="1" stroke-dasharray="4 2" opacity="0.6">
+                    <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="10s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle r="40" fill="url(#innerGlow)"/>
+                  <circle r="40" fill="url(#glassSheen)"/>
+                  <circle r="40" fill="none" stroke="#ff6b9d" stroke-width="4" opacity="0.3">
+                    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite" begin="0.7s"/>
+                  </circle>
+                  <text x="0" y="2" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold">INDUSTRY</text>
+                  <text x="0" y="14" text-anchor="middle" fill="#ff6b9d" font-size="6" font-family="monospace">EXPERTISE</text>
+                </g>
+              </g>
+              <!-- Close inner rotation group -->
+              </g>
+            <!-- Close outer positioning group -->
             </g>
           </svg>
         </div>
