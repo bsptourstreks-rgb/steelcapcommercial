@@ -71,18 +71,21 @@ const industries = [
           data-index={index}
           style={`animation-delay: ${index * 0.1}s`}
         >
-          <!-- Solid Background -->
-          <div class="apple-bg"></div>
+          <!-- Background Image -->
+          <div class="apple-bg" style={`background-image: url('${industry.image}')`}></div>
+
+          <!-- Gradient Overlay -->
+          <div class="apple-overlay"></div>
 
           <!-- Border Highlight -->
           <div class="apple-border"></div>
 
           <!-- Content -->
           <div class="apple-content">
-            <h3 class="apple-title">
+            <h3 class="apple-title text-white">
               {industry.name}
             </h3>
-            <p class="apple-desc">
+            <p class="apple-desc text-slate-200">
               {industry.description}
             </p>
           </div>
@@ -92,7 +95,7 @@ const industries = [
 
     <!-- Scroll Indicator -->
     <div class="scroll-indicator">
-      <span class="scroll-text">Swipe to explore more industries</span>
+      <span class="scroll-text">SWIPE → to see more cards</span>
       <div class="scroll-arrow">
         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -172,16 +175,29 @@ const industries = [
       0 4px 12px rgba(0, 0, 0, 0.2);
   }
 
-  /* Solid Background */
+  /* Background Image */
   .apple-bg {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-    transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .apple-card:hover .apple-bg {
-    background: linear-gradient(135deg, #334155 0%, #475569 100%);
+    transform: scale(1.1);
+  }
+
+  /* Gradient Overlay */
+  .apple-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.3) 0%, rgba(15, 23, 42, 0.5) 60%, rgba(15, 23, 42, 0.9) 100%);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .apple-card:hover .apple-overlay {
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.1) 0%, rgba(15, 23, 42, 0.3) 70%, rgba(15, 23, 42, 0.8) 100%);
   }
 
   /* Border Highlight on Hover - Sharp Edges */
@@ -219,6 +235,8 @@ const industries = [
     letter-spacing: -0.01em;
     margin-bottom: 0.25rem;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   }
 
   .apple-card:hover .apple-title {

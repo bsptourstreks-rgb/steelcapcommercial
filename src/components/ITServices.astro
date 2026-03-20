@@ -7,7 +7,7 @@ const itServices = [
   {
     title: 'Managed IT & Support',
     description: '24/7 proactive IT services keeping your business running without interruption. Our expert team monitors, maintains, and optimizes your entire IT infrastructure.',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80'
+    image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&q=80'
   },
   {
     title: 'Cybersecurity',
@@ -22,7 +22,7 @@ const itServices = [
   {
     title: 'Software Development',
     description: 'Custom software solutions built for your unique challenges. Web applications, mobile apps, and integrations designed with user experience at the core.',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80'
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80'
   },
   {
     title: 'Data & AI',
@@ -32,14 +32,19 @@ const itServices = [
   {
     title: 'Enterprise Systems',
     description: 'Streamline operations with robust ERP and CRM solutions. We implement, customize, and integrate enterprise systems that drive efficiency.',
-    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80'
+    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80'
   },
 ];
 ---
 
-<section id="it-services" class="py-16 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 relative overflow-hidden">
-  <!-- Dark Circuit Board Background - Different Pattern -->
-  <div class="absolute inset-0 opacity-25">
+<section id="it-services" class="py-16 relative overflow-hidden" style="background: linear-gradient(135deg, #d4d4d8 0%, #e4e4e7 30%, #f4f4f5 50%, #e4e4e7 70%, #d4d4d8 100%);">
+  <!-- Pure metallic silver mesh overlay -->
+  <div class="absolute inset-0 opacity-15" style="background-image: repeating-linear-gradient(0deg, #a1a1aa 0px 1px, transparent 1px 3px), repeating-linear-gradient(90deg, #a1a1aa 0px 1px, transparent 1px 3px); background-size: 6px 6px;"></div>
+  <!-- Silver sheen highlight -->
+  <div class="absolute inset-0 opacity-30" style="background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.7) 50%, transparent 100%);"></div>
+
+  <!-- Circuit Board Background -->
+  <div class="absolute inset-0 opacity-20">
     <svg class="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
       <defs>
         <!-- Purple/Blue gradient for traces -->
@@ -160,17 +165,17 @@ const itServices = [
     <!-- Section Header -->
     <div class="text-center max-w-2xl mx-auto mb-16 scroll-reveal">
       <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full
-                  bg-slate-800/50 border border-slate-700/50
-                  text-violet-400 text-xs font-bold uppercase tracking-wider mb-6
-                  shadow-xl shadow-slate-900/50 backdrop-blur-xl
+                  bg-white/80 border border-slate-300/50
+                  text-slate-700 text-xs font-bold uppercase tracking-wider mb-6
+                  shadow-xl shadow-slate-900/10 backdrop-blur-xl
                   hover:border-violet-500/30 transition-all">
-        <span class="w-2 h-2 rounded-full bg-violet-400 animate-pulse"></span>
+        <span class="w-2 h-2 rounded-full bg-violet-500 animate-pulse"></span>
         Our IT Services
       </div>
-      <h2 class="font-h2-light text-white mb-4 whitespace-nowrap">
+      <h2 class="font-h2-light text-slate-900 mb-4 whitespace-nowrap">
         Solutions for Modern, Scalable Businesses
       </h2>
-      <p class="font-body text-slate-400">
+      <p class="font-body text-slate-600">
         Comprehensive IT services that drive digital evolution and competitive advantage.
       </p>
     </div>
@@ -212,19 +217,19 @@ const itServices = [
   .gallery-grid-light {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 3px;
+    gap: 4px;
     max-width: 900px;
     margin: 0 auto;
     padding: 4px;
     border-radius: 0;
     overflow: hidden;
-    background: #1e1b4b;
+    background: transparent;
   }
 
   @media (min-width: 768px) {
     .gallery-grid-light {
       grid-template-columns: repeat(3, 1fr);
-      gap: 4px;
+      gap: 5px;
       max-width: 1200px;
       padding: 5px;
     }
@@ -267,12 +272,12 @@ const itServices = [
   .gallery-overlay-light {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(15, 23, 42, 0.1) 0%, rgba(15, 23, 42, 0.15) 60%, rgba(15, 23, 42, 0.85) 100%);
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.3) 0%, rgba(15, 23, 42, 0.4) 60%, rgba(15, 23, 42, 0.9) 100%);
     transition: all 0.4s;
   }
 
   .gallery-card-light:hover .gallery-overlay-light {
-    background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.1) 70%, rgba(15, 23, 42, 0.75) 100%);
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.1) 0%, rgba(15, 23, 42, 0.2) 70%, rgba(15, 23, 42, 0.85) 100%);
   }
 
   .gallery-glow-light {
@@ -343,7 +348,7 @@ const itServices = [
     overflow: hidden;
     color: #e2e8f0;
     font-weight: 500;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   }
 
   .gallery-card-light:hover .gallery-desc-light {
